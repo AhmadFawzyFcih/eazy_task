@@ -22,10 +22,12 @@ gem 'puma', '~> 3.11'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+gem 'will_paginate'
+
 gem 'sidekiq', '~> 5.0', '>= 5.0.5'
 
 gem 'pry', '~> 0.12.2'
-gem 'active_model_serializers', '~> 0.10.0'
+gem 'active_model_serializers'
 
 gem 'redis'
 gem 'redis-namespace'
