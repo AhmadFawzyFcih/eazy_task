@@ -22,11 +22,8 @@ gem 'puma', '~> 3.11'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-gem 'will_paginate'
-
-gem 'sidekiq', '~> 5.0', '>= 5.0.5'
-
 gem 'pry', '~> 0.12.2'
+gem 'will_paginate'
 gem 'active_model_serializers'
 
 gem 'sidekiq', '~> 5.0', '>= 5.0.5'

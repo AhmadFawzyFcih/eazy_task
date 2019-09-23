@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
-  before_action :set_trip, only: [:show, :update, :destroy]
+  before_action :set_trip, only: [:show, :update, :destroy, :trip_history]
 
   def index
     trips = Trip.paginate(pagination_params)
@@ -32,6 +32,16 @@ class TripsController < ApplicationController
     @trip.destroy
   end
 
+  def trip_history
+    location = {
+      longitude: location_params[:longitude],
+      latitude: location_params[:latitude],
+      created_at: DateTime.now
+    }  
+    $redis.lpush("trip_#{@trip.id}_history", location.to_json)
+  end
+  
+
   private
     def set_trip
       @trip = Trip.find(params[:id])
@@ -39,5 +49,9 @@ class TripsController < ApplicationController
 
     def trip_params
       params.require(:trip).permit(:name, :description, :status, :user_id)
+    end
+
+    def location_params
+      params.require(:location).permit(:longitude, :latitude)
     end
 end

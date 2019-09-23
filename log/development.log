@@ -2658,3 +2658,605 @@ Processing by TripsController#update as */*
 Completed 422 Unprocessable Entity in 11602ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 8039)
 
 
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 03:40:40 +0200
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>"trip 4", "latitude"=>"desc trip 4"}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+Completed 500 Internal Server Error in 25738ms (ActiveRecord: 1.0ms | Allocations: 24400)
+
+
+  
+NoMethodError (undefined method `set' for nil:NilClass):
+  
+app/controllers/trips_controller.rb:40:in `trip_history'
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 03:42:00 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>"trip 4", "latitude"=>"desc trip 4"}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+Completed 500 Internal Server Error in 4056ms (ActiveRecord: 1.0ms | Allocations: 8920)
+
+
+  
+NoMethodError (undefined method `set' for nil:NilClass):
+  
+app/controllers/trips_controller.rb:40:in `trip_history'
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 03:42:54 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>"trip 4", "latitude"=>"desc trip 4"}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:47:in `set_trip'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.2ms | Allocations: 5097)
+
+
+  
+NoMethodError (undefined method `set' for nil:NilClass):
+  
+app/controllers/trips_controller.rb:41:in `trip_history'
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 03:46:07 +0200
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>"trip 4", "latitude"=>"desc trip 4"}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:47:in `set_trip'
+Completed 204 No Content in 6ms (ActiveRecord: 1.2ms | Allocations: 5302)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 03:48:04 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.3321, "latitude"=>1544784.336}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:43:in `set_trip'
+Completed 204 No Content in 5653ms (ActiveRecord: 1.4ms | Allocations: 15707)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 03:51:57 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.3321, "latitude"=>1544784.336}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:42:in `set_trip'
+Completed 204 No Content in 6ms (ActiveRecord: 1.0ms | Allocations: 4711)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 03:52:52 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.3321, "latitude"=>1544784.336}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+Completed 204 No Content in 5231ms (ActiveRecord: 1.2ms | Allocations: 8570)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 03:53:24 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.3321, "latitude"=>1544784.336}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:43:in `set_trip'
+Completed 204 No Content in 10ms (ActiveRecord: 2.4ms | Allocations: 4679)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 03:54:44 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.3321, "latitude"=>1544784.336}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+Completed 204 No Content in 6ms (ActiveRecord: 0.9ms | Allocations: 4704)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 03:56:17 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.3321, "latitude"=>1544784.336}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.2ms | Allocations: 4770)
+
+
+  
+Redis::CommandError (WRONGTYPE Operation against a key holding the wrong kind of value):
+  
+app/controllers/trips_controller.rb:40:in `trip_history'
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 03:56:37 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.3321, "latitude"=>1544784.336}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.1ms | Allocations: 4801)
+
+
+  
+Redis::CommandError (WRONGTYPE Operation against a key holding the wrong kind of value):
+  
+app/controllers/trips_controller.rb:40:in `trip_history'
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 03:56:47 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.3321, "latitude"=>1544784.336}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+Completed 204 No Content in 7ms (ActiveRecord: 1.4ms | Allocations: 4692)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 03:56:56 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.3321, "latitude"=>1544784.336}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+Completed 204 No Content in 2ms (ActiveRecord: 0.3ms | Allocations: 723)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 03:57:15 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>41112.3321, "latitude"=>1544784.336}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+Completed 204 No Content in 2ms (ActiveRecord: 0.4ms | Allocations: 723)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 03:58:21 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>41112.3321, "latitude"=>1544784.336}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+Completed 204 No Content in 6ms (ActiveRecord: 1.3ms | Allocations: 4733)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 04:05:49 +0200
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>41112.3321, "latitude"=>1544784.336}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+Completed 204 No Content in 5ms (ActiveRecord: 0.3ms | Allocations: 4647)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 04:06:09 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>41112.3321, "latitude"=>1544784.336}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+Completed 204 No Content in 2ms (ActiveRecord: 0.4ms | Allocations: 709)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 04:06:43 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>41112.3321, "latitude"=>1544784.336}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+Completed 204 No Content in 8ms (ActiveRecord: 1.2ms | Allocations: 4697)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 04:06:48 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>41112.33, "latitude"=>1544784.336}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+Completed 204 No Content in 2ms (ActiveRecord: 0.4ms | Allocations: 716)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 04:06:55 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>41112.33, "latitude"=>1544784.3306}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+Completed 204 No Content in 2ms (ActiveRecord: 0.3ms | Allocations: 716)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 04:07:00 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>41112.33, "latitude"=>544784.3306}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+Completed 204 No Content in 1ms (ActiveRecord: 0.3ms | Allocations: 716)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 04:07:56 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>41112.33, "latitude"=>544784.3306}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+Completed 204 No Content in 5ms (ActiveRecord: 0.9ms | Allocations: 4720)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 04:09:04 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>41112.33, "latitude"=>544784.3306}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:47:in `set_trip'
+Completed 204 No Content in 7ms (ActiveRecord: 1.3ms | Allocations: 4743)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 04:09:41 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>41112.33, "latitude"=>544784.3306}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:47:in `set_trip'
+Completed 204 No Content in 2ms (ActiveRecord: 0.4ms | Allocations: 762)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 04:09:45 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>41112.33, "latitude"=>544784.33}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:47:in `set_trip'
+Completed 204 No Content in 2ms (ActiveRecord: 0.4ms | Allocations: 762)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 04:09:49 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.33, "latitude"=>544784.33}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:47:in `set_trip'
+Completed 204 No Content in 3ms (ActiveRecord: 0.5ms | Allocations: 762)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 04:09:52 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.33, "latitude"=>544784.33}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:47:in `set_trip'
+Completed 204 No Content in 14ms (ActiveRecord: 0.3ms | Allocations: 764)
+
+
+Started GET "/trips" for ::1 at 2019-09-23 04:12:24 +0200
+Processing by TripsController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.07ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.3ms | Allocations: 10070)
+
+
+  
+Redis::CommandError (WRONGTYPE Operation against a key holding the wrong kind of value):
+  
+app/serializers/trip_serializer.rb:5:in `location_history'
+app/controllers/trips_controller.rb:6:in `index'
+Started GET "/trips" for ::1 at 2019-09-23 04:14:11 +0200
+Processing by TripsController#index as */*
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.89ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.7ms | Allocations: 7765)
+
+
+  
+TypeError (no implicit conversion of Array into String):
+  
+app/serializers/trip_serializer.rb:5:in `location_history'
+app/controllers/trips_controller.rb:6:in `index'
+Started GET "/trips" for ::1 at 2019-09-23 04:15:01 +0200
+Processing by TripsController#index as */*
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.75ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.4ms | Allocations: 7314)
+
+
+  
+TypeError (no implicit conversion of Array into String):
+  
+app/serializers/trip_serializer.rb:5:in `location_history'
+app/controllers/trips_controller.rb:6:in `index'
+Started GET "/trips" for ::1 at 2019-09-23 04:15:19 +0200
+Processing by TripsController#index as */*
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.71ms)
+Completed 200 OK in 18ms (Views: 12.0ms | ActiveRecord: 1.5ms | Allocations: 8075)
+
+
+Started GET "/trips" for ::1 at 2019-09-23 04:17:05 +0200
+Processing by TripsController#index as */*
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.56ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.3ms | Allocations: 7735)
+
+
+  
+TypeError (no implicit conversion of Array into String):
+  
+app/serializers/trip_serializer.rb:5:in `location_history'
+app/controllers/trips_controller.rb:6:in `index'
+Started GET "/trips" for ::1 at 2019-09-23 04:17:42 +0200
+Processing by TripsController#index as */*
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.37ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.5ms | Allocations: 7766)
+
+
+  
+TypeError (no implicit conversion of Array into String):
+  
+app/serializers/trip_serializer.rb:6:in `location_history'
+app/controllers/trips_controller.rb:6:in `index'
+Started GET "/trips" for ::1 at 2019-09-23 04:17:56 +0200
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by TripsController#index as */*
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.12ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.3ms | Allocations: 9549)
+
+
+  
+TypeError (no implicit conversion of Array into String):
+  
+app/serializers/trip_serializer.rb:6:in `location_history'
+app/controllers/trips_controller.rb:6:in `index'
+Started GET "/trips" for ::1 at 2019-09-23 04:18:21 +0200
+Processing by TripsController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.47ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.3ms | Allocations: 7767)
+
+
+  
+TypeError (no implicit conversion of Array into String):
+  
+app/serializers/trip_serializer.rb:6:in `location_history'
+app/controllers/trips_controller.rb:6:in `index'
+Started GET "/trips" for ::1 at 2019-09-23 04:19:27 +0200
+Processing by TripsController#index as */*
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.87ms)
+Completed 200 OK in 11ms (Views: 6.2ms | ActiveRecord: 1.2ms | Allocations: 7738)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 04:19:35 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.33, "latitude"=>544784.33}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:51:in `set_trip'
+Completed 204 No Content in 314191ms (ActiveRecord: 0.3ms | Allocations: 24691)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 04:24:53 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.33, "latitude"=>544784.33}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:58:in `set_trip'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.4ms | Allocations: 4827)
+
+
+  
+Redis::CommandError (ERR wrong number of arguments for 'hset' command):
+  
+app/controllers/trips_controller.rb:52:in `trip_history'
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 04:32:15 +0200
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.33, "latitude"=>544784.33}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:51:in `set_trip'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms | Allocations: 5124)
+
+
+  
+NoMethodError (private method `JSON' called for #<Redis::Namespace:0x000056493eafa090>):
+  
+app/controllers/trips_controller.rb:45:in `trip_history'
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 04:34:13 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.33, "latitude"=>544784.33}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:51:in `set_trip'
+Completed 204 No Content in 20204ms (ActiveRecord: 1.0ms | Allocations: 13455)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 04:34:55 +0200
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.33, "latitude"=>544784.33}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:51:in `set_trip'
+Completed 204 No Content in 11217ms (ActiveRecord: 1.0ms | Allocations: 24454)
+
+
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 04:35:44 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.33, "latitude"=>544784.33}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:51:in `set_trip'
+Completed 204 No Content in 114716ms (ActiveRecord: 1.2ms | Allocations: 19089)
+
+
+Started GET "/trips" for ::1 at 2019-09-23 04:37:45 +0200
+Processing by TripsController#index as */*
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.88ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.4ms | Allocations: 8422)
+
+
+  
+TypeError (no implicit conversion of Array into String):
+  
+app/serializers/trip_serializer.rb:5:in `location_history'
+app/controllers/trips_controller.rb:6:in `index'
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 04:38:09 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.33, "latitude"=>544784.33}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:51:in `set_trip'
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 1.4ms | Allocations: 84508)
+
+
+  
+NameError (undefined local variable or method `object' for #<TripsController:0x00007fae3010f640>
+Did you mean?  object_id):
+  
+app/controllers/trips_controller.rb:36:in `trip_history'
+Started POST "/trips/6/trip_history" for ::1 at 2019-09-23 04:38:23 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.33, "latitude"=>544784.33}, "id"=>"6", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:51:in `set_trip'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.9ms | Allocations: 4752)
+
+
+  
+TypeError (no implicit conversion of Array into String):
+  
+app/controllers/trips_controller.rb:36:in `trip_history'
+Started GET "/trips" for ::1 at 2019-09-23 04:39:37 +0200
+Processing by TripsController#index as */*
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.81ms)
+Completed 200 OK in 14ms (Views: 7.3ms | ActiveRecord: 1.4ms | Allocations: 8240)
+
+
+Started GET "/trips" for ::1 at 2019-09-23 04:42:49 +0200
+Processing by TripsController#index as */*
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.88ms)
+Completed 200 OK in 12ms (Views: 6.9ms | ActiveRecord: 1.3ms | Allocations: 7985)
+
+
+Started GET "/trips" for ::1 at 2019-09-23 04:43:08 +0200
+Processing by TripsController#index as */*
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.61ms)
+Completed 200 OK in 12ms (Views: 6.6ms | ActiveRecord: 1.5ms | Allocations: 7984)
+
+
+Started GET "/trips" for ::1 at 2019-09-23 04:43:22 +0200
+Processing by TripsController#index as */*
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.8ms)
+Completed 200 OK in 12ms (Views: 7.0ms | ActiveRecord: 1.5ms | Allocations: 8131)
+
+
+Started GET "/trips" for ::1 at 2019-09-23 04:43:30 +0200
+Processing by TripsController#index as */*
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.21ms)
+Completed 200 OK in 23ms (Views: 8.2ms | ActiveRecord: 1.7ms | Allocations: 8216)
+
+
+Started GET "/trips" for ::1 at 2019-09-23 04:46:46 +0200
+Processing by TripsController#index as */*
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.43ms)
+Completed 200 OK in 10ms (Views: 6.0ms | ActiveRecord: 1.2ms | Allocations: 8185)
+
+
+Started DELETE "/trips/1" for ::1 at 2019-09-23 04:54:54 +0200
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by TripsController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:47:in `set_trip'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trips_controller.rb:32:in `destroy'
+  [1m[36mTrip Destroy (0.2ms)[0m  [1m[31mDELETE FROM `trips` WHERE `trips`.`id` = 1[0m
+  ↳ app/controllers/trips_controller.rb:32:in `destroy'
+  [1m[35m (22.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trips_controller.rb:32:in `destroy'
+Completed 204 No Content in 15748ms (ActiveRecord: 23.0ms | Allocations: 12702)
+
+
+Started DELETE "/trips/2" for ::1 at 2019-09-23 04:55:39 +0200
+Processing by TripsController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:47:in `set_trip'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trips_controller.rb:32:in `destroy'
+  [1m[36mTrip Destroy (0.2ms)[0m  [1m[31mDELETE FROM `trips` WHERE `trips`.`id` = 2[0m
+  ↳ app/controllers/trips_controller.rb:32:in `destroy'
+  [1m[35m (9.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trips_controller.rb:32:in `destroy'
+Completed 204 No Content in 20ms (ActiveRecord: 10.7ms | Allocations: 7483)
+
+
+Started DELETE "/trips/2" for ::1 at 2019-09-23 04:55:41 +0200
+Processing by TripsController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:47:in `set_trip'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms | Allocations: 612)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Trip with 'id'=2):
+  
+app/controllers/trips_controller.rb:47:in `set_trip'
+Started GET "/trips" for ::1 at 2019-09-23 04:55:47 +0200
+Processing by TripsController#index as */*
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.22ms)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.5ms | Allocations: 2873)
+
+
+Started DELETE "/trips/6" for ::1 at 2019-09-23 04:55:56 +0200
+Processing by TripsController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:47:in `set_trip'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trips_controller.rb:32:in `destroy'
+  [1m[36mTrip Destroy (0.4ms)[0m  [1m[31mDELETE FROM `trips` WHERE `trips`.`id` = 6[0m
+  ↳ app/controllers/trips_controller.rb:32:in `destroy'
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trips_controller.rb:32:in `destroy'
+Completed 204 No Content in 10ms (ActiveRecord: 6.7ms | Allocations: 2326)
+
+
+Started GET "/trips" for ::1 at 2019-09-23 04:56:02 +0200
+Processing by TripsController#index as */*
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.77ms)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.5ms | Allocations: 2288)
+
+
