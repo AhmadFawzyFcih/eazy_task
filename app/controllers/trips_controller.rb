@@ -38,7 +38,8 @@ class TripsController < ApplicationController
       latitude: location_params[:latitude],
       created_at: DateTime.now
     }  
-    $redis.lpush("trip_#{@trip.id}_history", location.to_json)
+    TrackLocationWorker.perform_async(location, @trip.id)
+    render json: {data: "location updated"}, status: :ok
   end
   
 
