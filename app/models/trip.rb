@@ -1,7 +1,9 @@
 class Trip < ApplicationRecord
     enum status: [:ongoing, :completed]
+
     validates :status, presence: true, inclusion: { in: Trip.statuses.keys }
     validate  :trip_is_completed, on: :update
+    
     after_destroy :clear_history
 
     private
