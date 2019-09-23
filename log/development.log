@@ -3426,3 +3426,67 @@ Processing by TripsController#index as */*
 Completed 200 OK in 10ms (Views: 5.9ms | ActiveRecord: 1.4ms | Allocations: 7549)
 
 
+Started GET "/trips" for ::1 at 2019-09-23 21:37:34 +0200
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by TripsController#index as */*
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.1ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.11ms)
+Completed 200 OK in 10ms (Views: 6.0ms | ActiveRecord: 0.4ms | Allocations: 7868)
+
+
+Started POST "/trips" for ::1 at 2019-09-23 21:37:37 +0200
+Processing by TripsController#create as */*
+  Parameters: {"trip"=>{"name"=>"trip 4", "description"=>"desc trip 4", "status"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trips_controller.rb:16:in `create'
+  [1m[36mTrip Create (0.4ms)[0m  [1m[32mINSERT INTO `trips` (`name`, `description`, `status`, `created_at`, `updated_at`) VALUES ('trip 4', 'desc trip 4', 1, '2019-09-23 19:37:37.283860', '2019-09-23 19:37:37.283860')[0m
+  ↳ app/controllers/trips_controller.rb:16:in `create'
+  [1m[35m (37.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trips_controller.rb:16:in `create'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (0.55ms)
+Completed 201 Created in 43ms (Views: 1.4ms | ActiveRecord: 37.7ms | Allocations: 2862)
+
+
+Started GET "/trips/1" for ::1 at 2019-09-23 21:37:44 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 739)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Trip with 'id'=1):
+  
+app/controllers/trips_controller.rb:48:in `set_trip'
+Started PUT "/trips/6" for ::1 at 2019-09-23 21:37:52 +0200
+Processing by TripsController#update as */*
+  Parameters: {"trip"=>{"name"=>"", "description"=>"desc trip 1", "status"=>0}, "id"=>"6"}
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms | Allocations: 618)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Trip with 'id'=6):
+  
+app/controllers/trips_controller.rb:48:in `set_trip'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-23 21:40:31 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 2564)
+
+
+Started POST "/trips" for ::1 at 2019-09-23 21:45:16 +0200
+Processing by TripsController#create as */*
+  Parameters: {"trip"=>{"name"=>"", "description"=>"desc trip 4", "status"=>1}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.07ms)
+Completed 422 Unprocessable Entity in 11ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 8377)
+
+

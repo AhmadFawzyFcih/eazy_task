@@ -3,6 +3,7 @@ class Trip < ApplicationRecord
 
     validates :status, presence: true, inclusion: { in: Trip.statuses.keys }
     validate  :trip_is_completed, on: :update
+    validates :name, presence: true
     
     after_destroy :clear_history
 
