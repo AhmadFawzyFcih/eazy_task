@@ -29,6 +29,7 @@ gem 'sidekiq', '~> 5.0', '>= 5.0.5'
 gem 'pry', '~> 0.12.2'
 gem 'active_model_serializers'
 
+gem 'sidekiq', '~> 5.0', '>= 5.0.5'
 gem 'redis'
 gem 'redis-namespace'
 
