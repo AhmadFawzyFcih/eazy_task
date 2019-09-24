@@ -1,4 +1,4 @@
-# Skolera-Task
+# Eazy-Task
 
 1-This is a simple application that simulate tracking a trip by save location(longitude and latitude) history:-
 
