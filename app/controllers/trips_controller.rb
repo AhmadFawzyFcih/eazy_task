@@ -14,7 +14,7 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
 
     if @trip.save
-      render json: @trip, status: :created, location: @trip
+      render json: @trip, status: :created
     else
       render json: @trip.errors, status: :unprocessable_entity
     end
@@ -36,10 +36,10 @@ class TripsController < ApplicationController
     location = {
       longitude: location_params[:longitude],
       latitude: location_params[:latitude],
-      created_at: DateTime.now
+      trip_id: location_params[:trip_id]
     }  
-    TrackLocationWorker.perform_async(location, @trip.id)
-    render json: {data: "location updated"}, status: :ok
+    TrackLocationWorker.perform_async(location)
+    render json: {data: "location saved"}, status: :ok
   end
   
 
@@ -53,6 +53,6 @@ class TripsController < ApplicationController
     end
 
     def location_params
-      params.require(:location).permit(:longitude, :latitude)
+      params.require(:location).permit(:longitude, :latitude).merge(trip_id: @trip.id)
     end
 end

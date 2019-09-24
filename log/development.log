@@ -3490,3 +3490,2428 @@ Processing by TripsController#create as */*
 Completed 422 Unprocessable Entity in 11ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 8377)
 
 
+Started GET "/trips" for ::1 at 2019-09-24 01:38:59 +0200
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by TripsController#index as */*
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (9.28ms)
+Completed 200 OK in 17ms (Views: 10.6ms | ActiveRecord: 0.5ms | Allocations: 4073)
+
+
+Started GET "/trips/3" for ::1 at 2019-09-24 01:39:05 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (0.58ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 1201)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('1905709807032802050', 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateTripHistories (20190923234736)
+  [1m[35m (42.1ms)[0m  [1m[35mCREATE TABLE `trip_histories` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `trip_id` int, `longitude` decimal, `latitude` decimal, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190923234736')[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('1905709807032802050')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 01:58:47 +0200
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitud"=>1112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[31mUnpermitted parameter: :longitud[0m
+[31mUnpermitted parameter: :longitud[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 5388)
+
+
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 01:58:50 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitud"=>1112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[31mUnpermitted parameter: :longitud[0m
+[31mUnpermitted parameter: :longitud[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1053)
+
+
+Started GET "/trips" for ::1 at 2019-09-24 01:58:57 +0200
+Processing by TripsController#index as */*
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.47ms)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.6ms | Allocations: 2915)
+
+
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:00:08 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:58:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.17ms)
+Completed 500 Internal Server Error in 143104ms (Views: 1.9ms | ActiveRecord: 1.7ms | Allocations: 45747)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/trips_controller.rb:52:in `trip_history'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:02:36 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:58:in `set_trip'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ (pry):4:in `trip_history'
+  [1m[36mTrip Load (0.8ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ (pry):4:in `trip_history'
+  [1m[36mTripHistory Create (0.4ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 1112, 544784, '2019-09-24 00:02:40.694714', '2019-09-24 00:02:40.694714')[0m
+  ↳ (pry):4:in `trip_history'
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ (pry):4:in `trip_history'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with TripHistory (0.64ms)
+Completed 500 Internal Server Error in 11835ms (Views: 3.2ms | ActiveRecord: 7.1ms | Allocations: 26654)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/trips_controller.rb:52:in `trip_history'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:04:05 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:58:in `set_trip'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trips_controller.rb:40:in `trip_history'
+  [1m[36mTrip Load (1.0ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:40:in `trip_history'
+  [1m[36mTripHistory Create (0.9ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 1112, 544784, '2019-09-24 00:04:10.797685', '2019-09-24 00:04:10.797685')[0m
+  ↳ app/controllers/trips_controller.rb:40:in `trip_history'
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trips_controller.rb:40:in `trip_history'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with TripHistory (0.56ms)
+Completed 500 Internal Server Error in 5253ms (Views: 1.8ms | ActiveRecord: 7.2ms | Allocations: 11814)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/trips_controller.rb:52:in `trip_history'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:06:14 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:43:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 1.0ms | Allocations: 5377)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:06:28 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:43:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 981)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started GET "/sidekiq" for ::1 at 2019-09-24 02:06:50 +0200
+Started GET "/sidekiq/stylesheets/bootstrap.css" for ::1 at 2019-09-24 02:06:50 +0200
+Started GET "/sidekiq/javascripts/application.js" for ::1 at 2019-09-24 02:06:50 +0200
+Started GET "/sidekiq/javascripts/dashboard.js" for ::1 at 2019-09-24 02:06:50 +0200
+  [1m[35m (4.1ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:06:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:07:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:07:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:07:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:07:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:07:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:07:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:07:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:07:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:07:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:07:46 +0200
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:07:50 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:45:in `set_trip'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:07:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:07:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:08:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:08:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:08:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:08:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:08:21 +0200
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mTripHistory Load (0.8ms)[0m  [1m[34mSELECT `trip_histories`.* FROM `trip_histories` ORDER BY `trip_histories`.`id` ASC LIMIT 1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.26ms)
+Completed 200 OK in 202137ms (Views: 2.3ms | ActiveRecord: 1.7ms | Allocations: 33101)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:11:21 +0200
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:11:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:11:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:11:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:11:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:11:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:11:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:11:56 +0200
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:11:56 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:43:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 11ms (Views: 1.7ms | ActiveRecord: 2.1ms | Allocations: 6279)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:12:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:12:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:12:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:12:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:12:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:12:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:12:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:12:36 +0200
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:12:37 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:43:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 996)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:12:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:12:46 +0200
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:12:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:12:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:13:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:13:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:13:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:13:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:13:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:13:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:13:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:13:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:13:41 +0200
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:13:42 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>1112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:49:in `set_trip'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trips_controller.rb:36:in `trip_history'
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:36:in `trip_history'
+  [1m[36mTripHistory Create (0.2ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 1112, 544784, '2019-09-24 00:13:42.417327', '2019-09-24 00:13:42.417327')[0m
+  ↳ app/controllers/trips_controller.rb:36:in `trip_history'
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trips_controller.rb:36:in `trip_history'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:13:46 +0200
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:13:51 +0200
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 200 OK in 9817ms (Views: 2.1ms | ActiveRecord: 7.0ms | Allocations: 34377)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:13:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:14:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:14:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:14:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:14:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:14:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:14:26 +0200
+Started GET "/trips" for ::1 at 2019-09-24 02:14:26 +0200
+Processing by TripsController#index as */*
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (3.26ms)
+Completed 200 OK in 27ms (Views: 15.0ms | ActiveRecord: 0.8ms | Allocations: 6388)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:14:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:14:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:14:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:14:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:14:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:14:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:15:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:15:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:15:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:15:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:15:21 +0200
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:15:24 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>561112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trips_controller.rb:36:in `trip_history'
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:36:in `trip_history'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 561112, 544784, '2019-09-24 00:15:24.280097', '2019-09-24 00:15:24.280097')[0m
+  ↳ app/controllers/trips_controller.rb:36:in `trip_history'
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trips_controller.rb:36:in `trip_history'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 29ms (Views: 0.5ms | ActiveRecord: 6.0ms | Allocations: 12671)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:15:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:15:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:15:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:15:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:15:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:15:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:15:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:16:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:16:06 +0200
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:16:06 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 11ms (Views: 0.8ms | ActiveRecord: 1.7ms | Allocations: 5324)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:16:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:16:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:16:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:16:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:16:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:16:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:16:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:16:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:16:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:16:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:17:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:17:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:17:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:17:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:17:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:17:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:17:31 +0200
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:17:32 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 9ms (Views: 0.8ms | ActiveRecord: 1.4ms | Allocations: 5339)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:17:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:17:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:17:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:17:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:17:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:18:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:18:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:18:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:18:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:18:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:18:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:18:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:18:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:18:41 +0200
+  [1m[35m (1.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ app/workers/track_location_worker.rb:8:in `perform'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:18:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:18:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:18:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:19:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:19:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:19:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:19:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:19:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:19:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:19:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:19:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:19:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:19:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:19:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:19:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:20:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:20:06 +0200
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:20:09 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 10ms (Views: 1.1ms | ActiveRecord: 1.1ms | Allocations: 5377)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:20:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:20:16 +0200
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:20:17 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 971)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:20:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:20:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:20:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:20:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:20:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:20:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:20:51 +0200
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:20:52 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 987)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:20:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:21:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:21:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:21:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:21:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:21:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:21:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:21:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:21:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:21:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:21:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:21:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:21:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:22:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:22:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:22:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:22:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:22:21 +0200
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:22:26 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 1.5ms | Allocations: 5378)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:22:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:22:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:22:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:22:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:22:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:22:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:22:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:23:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:23:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:23:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:23:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:23:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:23:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:23:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:23:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:23:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:23:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:23:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:23:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:24:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:24:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:24:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:24:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:24:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:24:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:24:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:24:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:24:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:24:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:24:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:24:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:25:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:25:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:25:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:25:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:25:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:25:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:25:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:25:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:25:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:25:46 +0200
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:25:47 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"locaon"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:46:in `set_trip'
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.4ms | Allocations: 665)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: location):
+  
+app/controllers/trips_controller.rb:54:in `location_params'
+app/controllers/trips_controller.rb:39:in `trip_history'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:25:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:25:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:26:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:26:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:26:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:26:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:26:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:26:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:26:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:26:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:26:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:26:46 +0200
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:26:49 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 8ms (Views: 0.9ms | ActiveRecord: 1.1ms | Allocations: 5478)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:26:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:26:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:27:01 +0200
+  [1m[35m (1.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ (pry):2:in `perform'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ (pry):2:in `perform'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ (pry):2:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:27:02.547242', '2019-09-24 00:27:02.547242')[0m
+  ↳ (pry):2:in `perform'
+  [1m[35m (37.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ (pry):2:in `perform'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:27:06 +0200
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:8:in `perform'
+  [1m[36mTrip Load (1.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:8:in `perform'
+  [1m[36mTripHistory Create (1.1ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:27:07.499505', '2019-09-24 00:27:07.499505')[0m
+  ↳ app/workers/track_location_worker.rb:8:in `perform'
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:8:in `perform'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:27:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:27:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:27:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:27:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:27:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:27:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:27:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:27:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:27:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:27:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:28:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:28:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:28:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:28:16 +0200
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:28:21 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 1.4ms | Allocations: 5409)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.2ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:28:21.785189', '2019-09-24 00:28:21.785189')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (35.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:28:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:28:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:28:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:28:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:28:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:28:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:28:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:28:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:29:01 +0200
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:29:03 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 9ms (Views: 0.8ms | ActiveRecord: 1.3ms | Allocations: 5439)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:29:03.735385', '2019-09-24 00:29:03.735385')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:29:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:29:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:29:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:29:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:29:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:29:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:29:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:29:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:29:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:29:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:29:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:30:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:30:06 +0200
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:07 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 12ms (Views: 0.9ms | ActiveRecord: 1.2ms | Allocations: 5464)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.2ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:07.930803', '2019-09-24 00:30:07.930803')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:30:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:30:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:30:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:30:26 +0200
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:28 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1090)
+
+
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:29 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1090)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.2ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:29.205490', '2019-09-24 00:30:29.205490')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (38.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:29 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 1079)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:29.817177', '2019-09-24 00:30:29.817177')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:30 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1090)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:30.111200', '2019-09-24 00:30:30.111200')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:30 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 1079)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.2ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:30.322282', '2019-09-24 00:30:30.322282')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:30 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1079)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.2ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:30.639724', '2019-09-24 00:30:30.639724')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:31 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1090)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.1ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:31.040211', '2019-09-24 00:30:31.040211')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (38.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:31 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 1090)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:31.217170', '2019-09-24 00:30:31.217170')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (36.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:31 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1079)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.2ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:31.324482', '2019-09-24 00:30:31.324482')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:31 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1090)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:31.525329', '2019-09-24 00:30:31.525329')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (38.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:31 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 1090)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:31.681080', '2019-09-24 00:30:31.681080')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (36.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:31 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1090)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:31.830289', '2019-09-24 00:30:31.830289')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:30:31 +0200
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:31 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1090)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.2ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:31.958185', '2019-09-24 00:30:31.958185')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (39.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:32 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1090)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:32.080275', '2019-09-24 00:30:32.080275')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:32 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 1079)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.2ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:32.256806', '2019-09-24 00:30:32.256806')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:32 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 1079)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.2ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:32.336509', '2019-09-24 00:30:32.336509')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:32 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1090)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.2ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:32.657583', '2019-09-24 00:30:32.657583')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:33 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1079)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:33.011541', '2019-09-24 00:30:33.011541')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:33 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1090)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.2ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:33.190724', '2019-09-24 00:30:33.190724')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:33 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1079)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.4ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:33.307237', '2019-09-24 00:30:33.307237')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:33 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1090)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.2ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:33.553668', '2019-09-24 00:30:33.553668')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:33 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1079)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:33.647083', '2019-09-24 00:30:33.647083')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:33 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1090)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.2ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:33.924749', '2019-09-24 00:30:33.924749')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:34 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1090)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:34.006750', '2019-09-24 00:30:34.006750')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:34 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1090)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:34.279805', '2019-09-24 00:30:34.279805')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:34 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1079)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:34.443171', '2019-09-24 00:30:34.443171')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:34 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 1090)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:34.615319', '2019-09-24 00:30:34.615319')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:34 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1090)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.2ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:34.787814', '2019-09-24 00:30:34.787814')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:34 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 1090)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.2ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:34.888682', '2019-09-24 00:30:34.888682')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:35 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1101)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.2ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:35.139948', '2019-09-24 00:30:35.139948')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:35 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1090)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:35.312648', '2019-09-24 00:30:35.312648')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:35 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 1093)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:35.493361', '2019-09-24 00:30:35.493361')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (38.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:35 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1090)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:35.597801', '2019-09-24 00:30:35.597801')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:35 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1079)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:35.850665', '2019-09-24 00:30:35.850665')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:35 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1090)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:35.953405', '2019-09-24 00:30:35.953405')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:36 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1090)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:36.213942', '2019-09-24 00:30:36.213942')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:36 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1090)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:36.382947', '2019-09-24 00:30:36.382947')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (38.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:30:36 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1090)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.2ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:30:36.519489', '2019-09-24 00:30:36.519489')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (37.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:30:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:30:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:30:46 +0200
+Started GET "/trips" for ::1 at 2019-09-24 02:30:46 +0200
+Processing by TripsController#index as */*
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `trips`[0m
+  ↳ app/controllers/application_controller.rb:8:in `pagination_response'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` LIMIT 10 OFFSET 0[0m
+  ↳ app/controllers/trips_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.41ms)
+Completed 200 OK in 11ms (Views: 4.0ms | ActiveRecord: 0.6ms | Allocations: 6880)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:30:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:30:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:31:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:31:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:31:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:31:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:31:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:31:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:31:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:31:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:31:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:31:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:31:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:31:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:32:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:32:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:32:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:32:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:32:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:32:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:32:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:32:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:32:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:32:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:32:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:32:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:33:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:33:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:33:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:33:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:33:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:33:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:33:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:33:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:33:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:33:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:33:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:33:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:34:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:34:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:34:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:34:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:34:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:34:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:34:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:34:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:34:41 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 02:34:44 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:34:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:34:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:34:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:35:01 +0200
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (21727.82ms)
+Completed 200 OK in 21739ms (Views: 21729.2ms | ActiveRecord: 1.5ms | Allocations: 34198)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:35:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:35:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:35:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:35:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:35:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:35:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:35:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:35:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:35:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:35:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:35:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:36:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:36:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:36:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:36:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:36:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:36:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:36:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:36:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:36:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:36:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:36:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:36:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:37:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:37:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:37:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:37:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:37:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:37:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:37:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:37:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:37:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:37:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:37:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:37:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:38:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:38:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:38:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:38:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:38:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:38:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:38:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:38:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:38:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:38:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:38:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:38:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:39:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:39:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:39:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:39:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:39:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:39:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:39:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:39:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:39:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:39:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:39:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:39:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:40:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:40:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:40:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:40:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:40:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:40:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:40:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:40:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:40:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:40:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:40:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:40:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:41:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:41:06 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 02:41:10 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (2.69ms)
+Completed 200 OK in 24ms (Views: 4.2ms | ActiveRecord: 1.6ms | Allocations: 9835)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:41:11 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 02:41:12 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (1.56ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 3769)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:41:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:41:21 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 02:41:26 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers]   [1m[36mTripHistory Load (0.3ms)[0m  [1m[34mSELECT `trip_histories`.* FROM `trip_histories` WHERE `trip_histories`.`trip_id` = 3[0m
+[active_model_serializers]   ↳ app/serializers/trip_serializer.rb:10:in `location_history'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (32.17ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.7ms | Allocations: 26511)
+
+
+  
+NoMethodError (undefined method `reverse!' for #<TripHistory::ActiveRecord_Associations_CollectionProxy:0x000055597ed96200>
+Did you mean?  reverse):
+  
+app/serializers/trip_serializer.rb:12:in `location_history'
+app/controllers/trips_controller.rb:10:in `show'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:41:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:41:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:41:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:41:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:41:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:41:51 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 02:41:56 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (1.46ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 3786)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:41:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:42:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:42:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:42:11 +0200
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:42:12 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 25ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 2697)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:42:12.623122', '2019-09-24 00:42:12.623122')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started GET "/trips/3" for ::1 at 2019-09-24 02:42:16 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (8.62ms)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.3ms | Allocations: 3866)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:42:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:42:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:42:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:42:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:42:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:42:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:42:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:42:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:42:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:43:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:43:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:43:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:43:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:43:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:43:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:43:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:43:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:43:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:43:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:43:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:43:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:44:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:44:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:44:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:44:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:44:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:44:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:44:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:44:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:44:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:44:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:44:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:44:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:45:01 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 02:45:02 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (2.42ms)
+Completed 200 OK in 12ms (Views: 3.9ms | ActiveRecord: 1.1ms | Allocations: 9899)
+
+
+Started GET "/trips/3" for ::1 at 2019-09-24 02:45:05 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (1.84ms)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 3865)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:45:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:45:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:45:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:45:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:45:26 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 02:45:29 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:45:31 +0200
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:45:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:45:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:45:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:45:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:45:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:46:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:46:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:46:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:46:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:46:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:46:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:46:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:46:36 +0200
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (70377.15ms)
+Completed 200 OK in 70388ms (Views: 70379.2ms | ActiveRecord: 1.0ms | Allocations: 60285)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:46:41 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 02:46:43 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:46:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:46:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:46:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:47:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:47:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:47:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:47:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:47:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:47:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:47:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:47:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:47:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:47:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:47:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:47:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:48:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:48:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:48:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:48:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:48:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:48:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:48:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:48:36 +0200
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (188649.55ms)
+Completed 200 OK in 188676ms (Views: 188651.8ms | ActiveRecord: 2.1ms | Allocations: 71907)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:49:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:49:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:49:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:49:52 +0200
+  [1m[35m (6.0ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:49:52 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:49:52 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:49:52 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:49:52 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:49:52 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:49:52 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:49:52 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:49:52 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:49:52 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:49:52 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:49:52 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:49:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:50:01 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 02:50:04 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers]   [1m[36mTripHistory Load (0.4ms)[0m  [1m[34mSELECT `trip_histories`.* FROM `trip_histories` WHERE `trip_histories`.`trip_id` = 3[0m
+[active_model_serializers]   ↳ app/serializers/trip_serializer.rb:11:in `location_history'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (45.09ms)
+Completed 200 OK in 68ms (Views: 45.8ms | ActiveRecord: 2.5ms | Allocations: 23220)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:50:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:50:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:50:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:50:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:50:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:50:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:50:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:50:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:50:46 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 02:50:47 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (2.12ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 4454)
+
+
+Started GET "/trips/3" for ::1 at 2019-09-24 02:50:51 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (1.59ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 4453)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:50:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:50:56 +0200
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:51:00 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>5461112.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 2713)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 5461112, 544784, '2019-09-24 00:51:00.752210', '2019-09-24 00:51:00.752210')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:51:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:51:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:51:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:51:16 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 02:51:19 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (2.03ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 4530)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:51:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:51:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:51:31 +0200
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 02:51:32 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>123456789.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1090)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 123456789, 544784, '2019-09-24 00:51:32.482193', '2019-09-24 00:51:32.482193')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (28.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:51:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:51:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:51:46 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 02:51:50 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (1.76ms)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 4607)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:51:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:51:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:52:01 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 02:52:06 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers]   [1m[36mTripHistory Load (0.3ms)[0m  [1m[34mSELECT `trip_histories`.* FROM `trip_histories` WHERE `trip_histories`.`trip_id` = 3[0m
+[active_model_serializers]   ↳ app/serializers/trip_serializer.rb:11:in `location_history'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (14.25ms)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.6ms | Allocations: 13436)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:52:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:52:11 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 02:52:12 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (1.75ms)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 4607)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:52:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:52:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:52:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:52:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:52:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:52:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:52:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:52:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:52:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:53:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:53:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:53:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:53:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:53:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:53:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:53:31 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 02:53:34 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (1.03ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.1ms | Allocations: 7865)
+
+
+  
+TypeError (no implicit conversion of Array into String):
+  
+app/serializers/trip_serializer.rb:7:in `location_history'
+app/controllers/trips_controller.rb:10:in `show'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:53:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:53:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:53:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:53:51 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 02:53:55 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (1.84ms)
+Completed 200 OK in 12ms (Views: 3.1ms | ActiveRecord: 1.1ms | Allocations: 10649)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:53:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:54:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:54:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:54:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:54:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:54:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:54:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:54:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:54:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:54:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:54:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:54:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:54:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:55:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:55:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:55:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:55:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:55:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:55:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:55:31 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 02:55:33 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:55:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:55:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:55:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:55:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:55:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:56:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:56:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:56:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:56:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:56:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:56:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:56:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:56:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:56:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:56:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:56:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:56:56 +0200
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (86795.17ms)
+Completed 200 OK in 86816ms (Views: 86797.4ms | ActiveRecord: 0.9ms | Allocations: 69523)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:57:01 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 02:57:04 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (1.26ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.0ms | Allocations: 7292)
+
+
+  
+NoMethodError (private method `JSON' called for #<Redis::Namespace:0x000055597e7c6eb0>):
+  
+app/serializers/trip_serializer.rb:5:in `location_history'
+app/controllers/trips_controller.rb:10:in `show'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:57:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:57:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:57:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:57:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:57:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:57:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:57:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:57:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:57:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:57:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:57:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:58:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:58:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:58:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:58:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:58:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:58:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:58:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:58:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:58:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:58:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:58:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:58:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:59:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:59:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:59:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:59:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:59:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:59:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:59:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:59:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:59:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:59:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:59:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 02:59:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:00:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:00:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:00:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:00:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:00:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:00:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:00:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:00:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:00:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:00:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:00:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:00:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:01:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:01:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:01:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:01:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:01:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:01:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:01:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:01:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:01:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:01:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:01:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:01:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:02:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:02:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:02:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:02:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:02:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:02:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:02:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:02:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:02:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:02:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:02:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:02:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:03:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:03:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:03:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:03:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:03:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:03:26 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 03:03:27 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers]   [1m[36mTripHistory Load (0.4ms)[0m  [1m[34mSELECT `trip_histories`.* FROM `trip_histories` WHERE `trip_histories`.`trip_id` = 3[0m
+[active_model_serializers]   ↳ app/serializers/trip_serializer.rb:11:in `location_history'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (10.26ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.5ms | Allocations: 13087)
+
+
+  
+NoMethodError (private method `JSON' called for #<Redis::Namespace:0x000055597e7c6eb0>):
+  
+app/serializers/trip_serializer.rb:11:in `block in location_history'
+app/serializers/trip_serializer.rb:11:in `location_history'
+app/controllers/trips_controller.rb:10:in `show'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:03:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:03:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:03:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:03:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:03:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:03:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:04:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:04:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:04:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:04:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:04:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:04:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:04:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:04:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:04:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:04:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:04:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:04:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:05:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:05:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:05:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:05:16 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 03:05:19 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers]   [1m[36mTripHistory Load (0.4ms)[0m  [1m[34mSELECT `trip_histories`.* FROM `trip_histories` WHERE `trip_histories`.`trip_id` = 3[0m
+[active_model_serializers]   ↳ app/serializers/trip_serializer.rb:11:in `location_history'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (24.49ms)
+Completed 200 OK in 34ms (Views: 24.3ms | ActiveRecord: 2.5ms | Allocations: 23691)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:05:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:05:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:05:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:05:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:05:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:05:46 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 03:05:51 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (0.96ms)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 1764)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:05:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:05:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:06:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:06:06 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 03:06:09 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (2.8ms)
+Completed 200 OK in 12ms (Views: 4.0ms | ActiveRecord: 1.1ms | Allocations: 10615)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:06:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:06:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:06:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:06:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:06:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:06:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:06:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:06:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:06:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:06:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:07:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:07:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:07:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:07:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:07:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:07:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:07:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:07:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:07:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:07:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:07:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:07:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:08:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:08:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:08:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:08:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:08:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:08:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:08:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:08:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:08:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:08:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:08:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:08:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:09:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:09:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:09:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:09:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:09:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:09:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:09:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:09:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:09:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:09:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:09:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:09:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:10:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:10:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:10:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:10:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:10:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:10:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:10:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:10:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:10:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:10:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:10:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:10:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:11:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:11:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:11:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:11:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:11:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:11:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:11:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:11:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:11:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:11:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:11:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:11:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:12:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:12:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:12:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:12:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:12:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:12:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:12:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:12:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:12:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:12:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:12:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:12:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:13:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:13:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:13:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:13:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:13:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:13:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:13:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:13:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:13:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:13:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:13:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:13:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:14:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:14:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:14:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:14:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:14:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:14:26 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 03:14:26 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers]   [1m[36mTripHistory Load (0.4ms)[0m  [1m[34mSELECT `trip_histories`.* FROM `trip_histories` WHERE `trip_histories`.`trip_id` = 3[0m
+[active_model_serializers]   ↳ app/controllers/trips_controller.rb:10:in `show'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (13.82ms)
+Completed 200 OK in 27ms (Views: 14.0ms | ActiveRecord: 2.4ms | Allocations: 18072)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:14:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:14:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:14:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:14:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:14:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:14:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:15:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:15:06 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 03:15:07 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers]   [1m[36mTripHistory Load (0.4ms)[0m  [1m[34mSELECT `trip_histories`.* FROM `trip_histories` WHERE `trip_histories`.`trip_id` = 3[0m
+[active_model_serializers]   ↳ app/controllers/trips_controller.rb:10:in `show'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (13.83ms)
+Completed 200 OK in 23ms (Views: 13.4ms | ActiveRecord: 2.2ms | Allocations: 18016)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:15:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:15:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:15:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:15:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:15:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:15:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:15:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:15:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:15:51 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 03:15:52 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers]   [1m[36mTripHistory Load (0.5ms)[0m  [1m[34mSELECT `trip_histories`.* FROM `trip_histories` WHERE `trip_histories`.`trip_id` = 3[0m
+[active_model_serializers]   ↳ app/controllers/trips_controller.rb:10:in `show'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (12.9ms)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.8ms | Allocations: 7582)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:15:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:16:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:16:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:16:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:16:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:16:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:16:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:16:31 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 03:16:33 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:16:36 +0200
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:16:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:16:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:16:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:16:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:17:01 +0200
+[active_model_serializers]   [1m[36mTripHistory Load (0.4ms)[0m  [1m[34mSELECT `trip_histories`.* FROM `trip_histories` WHERE `trip_histories`.`trip_id` = 3[0m
+[active_model_serializers]   ↳ app/controllers/trips_controller.rb:10:in `show'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (28697.53ms)
+Completed 200 OK in 28709ms (Views: 28696.7ms | ActiveRecord: 3.6ms | Allocations: 55868)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:17:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:17:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:17:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:17:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:17:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:17:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:17:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:17:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:17:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:17:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:17:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:18:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:18:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:18:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:18:16 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 03:18:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:18:21 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers]   [1m[36mTripHistory Load (1.4ms)[0m  [1m[34mSELECT `trip_histories`.* FROM `trip_histories` WHERE `trip_histories`.`trip_id` = 3[0m
+[active_model_serializers]   ↳ app/serializers/trip_serializer.rb:12:in `location_history'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (12724.81ms)
+Completed 200 OK in 12735ms (Views: 12721.9ms | ActiveRecord: 5.5ms | Allocations: 162767)
+
+
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:18:34 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:18:34 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:18:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:18:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:18:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:18:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:18:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:19:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:19:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:19:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:19:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:19:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:19:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:19:31 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:19:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:19:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:19:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:19:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:19:56 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:20:01 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:20:06 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:20:11 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:20:16 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:20:21 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:20:26 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:20:31 +0200
+Started GET "/trips/3" for ::1 at 2019-09-24 03:20:32 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:20:36 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:20:41 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:20:46 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:20:51 +0200
+Started GET "/sidekiq/stats" for ::1 at 2019-09-24 03:20:56 +0200
+Started GET "/sidekiq/busy" for ::1 at 2019-09-24 03:20:58 +0200
+Started POST "/sidekiq/busy" for ::1 at 2019-09-24 03:21:05 +0200
+Started GET "/sidekiq/busy" for ::1 at 2019-09-24 03:21:05 +0200
+Started POST "/sidekiq/busy" for ::1 at 2019-09-24 03:21:08 +0200
+Started GET "/sidekiq/busy" for ::1 at 2019-09-24 03:21:08 +0200
+Started POST "/sidekiq/busy" for ::1 at 2019-09-24 03:21:10 +0200
+Started GET "/sidekiq/busy" for ::1 at 2019-09-24 03:21:10 +0200
+Started POST "/sidekiq/busy" for ::1 at 2019-09-24 03:21:15 +0200
+Started GET "/sidekiq/busy" for ::1 at 2019-09-24 03:21:15 +0200
+Started POST "/sidekiq/busy" for ::1 at 2019-09-24 03:21:17 +0200
+Started GET "/sidekiq/busy" for ::1 at 2019-09-24 03:21:17 +0200
+Started POST "/sidekiq/busy" for ::1 at 2019-09-24 03:21:20 +0200
+Started GET "/sidekiq/busy" for ::1 at 2019-09-24 03:21:20 +0200
+Started GET "/sidekiq/queues" for ::1 at 2019-09-24 03:21:22 +0200
+Started POST "/sidekiq/queues/default" for ::1 at 2019-09-24 03:21:26 +0200
+Started GET "/sidekiq/queues" for ::1 at 2019-09-24 03:21:26 +0200
+[active_model_serializers]   [1m[36mTripHistory Load (1.0ms)[0m  [1m[34mSELECT `trip_histories`.* FROM `trip_histories` WHERE `trip_histories`.`trip_id` = 3[0m
+[active_model_serializers]   ↳ app/serializers/trip_serializer.rb:13:in `location_history'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (84638.75ms)
+Completed 200 OK in 84651ms (Views: 84636.2ms | ActiveRecord: 5.1ms | Allocations: 219390)
+
+
+Started GET "/trips/3" for ::1 at 2019-09-24 03:22:12 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers]   [1m[36mTripHistory Load (0.4ms)[0m  [1m[34mSELECT `trip_histories`.* FROM `trip_histories` WHERE `trip_histories`.`trip_id` = 3[0m
+[active_model_serializers]   ↳ app/controllers/trips_controller.rb:10:in `show'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (53180.92ms)
+Completed 200 OK in 53183ms (Views: 53181.0ms | ActiveRecord: 0.8ms | Allocations: 12804)
+
+
+Started GET "/trips/3" for ::1 at 2019-09-24 03:23:22 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers]   [1m[36mTripHistory Load (0.3ms)[0m  [1m[34mSELECT `trip_histories`.* FROM `trip_histories` WHERE `trip_histories`.`trip_id` = 3[0m
+[active_model_serializers]   ↳ app/controllers/trips_controller.rb:10:in `show'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (11.82ms)
+Completed 200 OK in 21ms (Views: 11.9ms | ActiveRecord: 2.1ms | Allocations: 18029)
+
+
+Started GET "/trips/3" for ::1 at 2019-09-24 03:26:11 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers]   [1m[36mTripHistory Load (0.3ms)[0m  [1m[34mSELECT `trip_histories`.* FROM `trip_histories` WHERE `trip_histories`.`trip_id` = 3[0m
+[active_model_serializers]   ↳ app/serializers/trip_serializer.rb:11:in `map'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (13.46ms)
+Completed 200 OK in 39ms (Views: 13.8ms | ActiveRecord: 2.4ms | Allocations: 17678)
+
+
+Started GET "/trips/3" for ::1 at 2019-09-24 03:26:35 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers]   [1m[36mTripHistory Load (0.3ms)[0m  [1m[34mSELECT `trip_histories`.* FROM `trip_histories` WHERE `trip_histories`.`trip_id` = 3[0m
+[active_model_serializers]   ↳ app/serializers/trip_serializer.rb:11:in `map'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (7.11ms)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.7ms | Allocations: 7234)
+
+
+Started GET "/trips/3" for ::1 at 2019-09-24 03:27:07 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers]   [1m[36mTripHistory Load (0.3ms)[0m  [1m[34mSELECT `trip_histories`.* FROM `trip_histories` WHERE `trip_histories`.`trip_id` = 3[0m
+[active_model_serializers]   ↳ app/serializers/trip_serializer.rb:11:in `location_history'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (19.12ms)
+Completed 200 OK in 28ms (Views: 19.4ms | ActiveRecord: 1.9ms | Allocations: 23665)
+
+
+Started GET "/trips/3" for ::1 at 2019-09-24 03:33:16 +0200
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (2.75ms)
+Completed 200 OK in 12ms (Views: 4.0ms | ActiveRecord: 0.3ms | Allocations: 10745)
+
+
+Started GET "/trips/3" for ::1 at 2019-09-24 03:33:19 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (3.63ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.3ms | Allocations: 4607)
+
+
+Started GET "/trips/3" for ::1 at 2019-09-24 03:33:56 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers]   [1m[36mTripHistory Load (0.4ms)[0m  [1m[34mSELECT `trip_histories`.* FROM `trip_histories` WHERE `trip_histories`.`trip_id` = 3[0m
+[active_model_serializers]   ↳ app/serializers/trip_serializer.rb:11:in `location_history'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (20.16ms)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.7ms | Allocations: 16687)
+
+
+Started POST "/trips/3/trip_history" for ::1 at 2019-09-24 03:34:10 +0200
+Processing by TripsController#trip_history as */*
+  Parameters: {"location"=>{"longitude"=>123456789.33, "latitude"=>544784.33}, "id"=>"3", "trip"=>{}}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 1470)
+
+
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[36mTripHistory Create (0.3ms)[0m  [1m[32mINSERT INTO `trip_histories` (`trip_id`, `longitude`, `latitude`, `created_at`, `updated_at`) VALUES (3, 123456789, 544784, '2019-09-24 01:34:10.563765', '2019-09-24 01:34:10.563765')[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+  [1m[35m (14.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/workers/track_location_worker.rb:5:in `perform'
+Started GET "/trips/3" for ::1 at 2019-09-24 03:34:17 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (1.45ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 4052)
+
+
+Started GET "/trips/3" for ::1 at 2019-09-24 03:36:58 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (1.79ms)
+Completed 200 OK in 11ms (Views: 2.9ms | ActiveRecord: 1.1ms | Allocations: 10090)
+
+
+Started GET "/trips/3" for ::1 at 2019-09-24 03:37:33 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (1.58ms)
+Completed 200 OK in 12ms (Views: 2.7ms | ActiveRecord: 1.1ms | Allocations: 10055)
+
+
+Started GET "/trips/3" for ::1 at 2019-09-24 03:38:22 +0200
+Processing by TripsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT `trips`.* FROM `trips` WHERE `trips`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/trips_controller.rb:48:in `set_trip'
+[active_model_serializers] Rendered TripSerializer with ActiveModelSerializers::Adapter::Attributes (0.56ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.9ms | Allocations: 6955)
+
+
+  
+JSON::ParserError (767: unexpected token at '}"Z365.01:43:10T42-90-9102":"ta_detadpu","Z365.01:43:10T42-90-9102":"ta_detaerc",487445:"edutital",987654321:"edutignol",3:"di_pirt",05:"di"{'):
+  
+app/serializers/trip_serializer.rb:8:in `block in location_history'
+app/serializers/trip_serializer.rb:8:in `each'
+app/serializers/trip_serializer.rb:8:in `location_history'
+app/controllers/trips_controller.rb:10:in `show'
